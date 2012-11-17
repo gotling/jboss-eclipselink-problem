@@ -10,6 +10,13 @@ Requirements
 * EclipseLink 2.4.1 installed as JBoss module
 * Default H2 datasource: ExampleDS
 
+Problem solved
+=========================
+
+The problem was that i instantiated the AccountService class instead of 
+injecting it using @EJB. After fixing that EntityManager was inected correctly 
+in the service and a transaction was available when doing em.persist(account);
+
 Steps to reproduce
 =========================
 
